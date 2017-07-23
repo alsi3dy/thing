@@ -45,4 +45,14 @@ def post_dict(request):
 
 	return render (request, 'experiment.html', context)
 
+def post_i(request, post_id):
+	obj = get_object_or_404(Post, id = post_id)
+
+	contexts = {
+	"inp" : obj,
+	}
+	return render (request, 'id.html', contexts) 
+
+
+
 	

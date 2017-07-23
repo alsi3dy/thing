@@ -12,5 +12,7 @@ urlpatterns = [
     url(r'^bye/$', views.post_bye, name ="bye"),
     url(r'^why/$', views.post_why, name ="why"),
     url(r'^sassy/$', views.post_sassy, name ="sassy"),
-    url(r'^dict/$', views.post_dict, name ="dict")
+    url(r'^dict/$', views.post_dict, name ="dict"),
+    url(r'^id/(?P<post_id>\d+)/$', views.post_i, name ="id"),
+
 ]
