@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1> {{title}} </h1>
+	<h2> {{content}} </h2>
+
+<ol>
+{% for instance in listt %}
+
+	<li>{{instance.title}}</li>
+
+{% endfor %}
+</ol> 
+
+<ol>
+{% for second_instance in list_2 %}
+	<li> {{second_instance.title}} </li>
+	{% endfor %} 
+	
+</ol>
+<h1> 
+{{inst.title}}<br>
+{{inst.content}}<br>
+{{inst.updated}}<br>
+{{inst.timestamp}}
+
+</h1>
+</body>
+</html>
