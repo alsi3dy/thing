@@ -13,6 +13,11 @@ urlpatterns = [
     url(r'^why/$', views.post_why, name ="why"),
     url(r'^sassy/$', views.post_sassy, name ="sassy"),
     url(r'^dict/$', views.post_dict, name ="dict"),
-    url(r'^id/(?P<post_id>\d+)/$', views.post_i, name ="id"),
+    url(r'^idkhkjhkjhjh/(?P<post_id>\d+)/$', views.post_i, name ="id"),
+    url(r'^form/$', views.post_fex, name ="form"),
+    url(r'^updates/(?P<post_id>\d+)/$', views.post_fex_update, name ="updates"),
+    url(r'^delete/(?P<post_id>\d+)/$', views.post_delete, name ="delete"),
+
+
 
 ]

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 class Post(models.Model):
 	title = models.CharField(max_length = 50)
@@ -8,6 +9,9 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title 
+
+	def absurd(self):
+		return reverse("posts:id" , kwargs ={"post_id": self.id})
 
 class Post_1(models.Model):
 	email = models.EmailField()

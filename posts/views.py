@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import random
 from .models import Post
+from .forms import PostForm
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 # Create your views here.
 
 def post_create(request):
@@ -52,6 +54,37 @@ def post_i(request, post_id):
 	"inp" : obj,
 	}
 	return render (request, 'id.html', contexts) 
+
+def post_fex(request):
+	form = PostForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		messages.success(request, "Object created.")
+	cont = {
+	"title" : "Create",
+	"form" : form,
+	}
+
+	return render(request, 'post_form.html' , cont)
+
+def post_fex_update(request, post_id):
+	post_object = get_object_or_404(Post, id= post_id)
+	form = PostForm(request.POST or None, instance =post_object)
+	if form.is_valid():
+		form.save()
+		message.success(request, "Giving it a second thought?")
+	cont = {
+	
+	"form" : form,
+	"post_object" :post_object
+	}
+
+	return render(request, 'post_update.html' , cont)
+
+def post_delete(request, post_id):
+	obj = Post.objects.get(id =post_id).delete()
+	messages.warning(request, "Object deleted.")
+
 
 
 

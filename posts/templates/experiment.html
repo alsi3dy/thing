@@ -4,13 +4,31 @@
 	<title></title>
 </head>
 <body>
+
+{% if messages %}
+	<ul class="messsages">
+	{% for message in messages %}
+	<li{%if message.tags %} class= "{{message.tags }}"{% endif %}>{{message}} </li>
+	{% endfor %}
+	</ul>
+{% endif %}
+
 	<h1> {{title}} </h1>
 	<h2> {{content}} </h2>
+
 
 <ol>
 {% for instance in listt %}
 
-	<a href="/posts/id/{{instance.id}}"><li>{{instance.title}}</li></a>
+	<a href="{% url 'posts:id' post_id=instance.id%}"><li>{{instance.title}}</li></a>
+
+{% endfor %}
+</ol> 
+<br><br>
+<ol>
+{% for x in listt %}
+
+	<a href="{{x.absurd}}"><li>{{x.title}}</li></a>
 
 {% endfor %}
 </ol> 
