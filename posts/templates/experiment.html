@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+</style>
 	<title></title>
 </head>
 <body>
 
-{% if messages %}
-	<ul class="messsages">
-	{% for message in messages %}
-	<li{%if message.tags %} class= "{{message.tags }}"{% endif %}>{{message}} </li>
-	{% endfor %}
-	</ul>
-{% endif %}
+
 
 	<h1> {{title}} </h1>
 	<h2> {{content}} </h2>
@@ -36,8 +33,9 @@
 <ol>
 {% for second_instance in list_2 %}
 	<li> {{second_instance.title}} </li>
-	{% endfor %} 
-	
+	{% endfor %} Emm
+
+<!--	
 </ol>
 <h1> 
 {{inst.title}}<br>
@@ -48,3 +46,4 @@
 </h1>
 </body>
 </html>
+-->
